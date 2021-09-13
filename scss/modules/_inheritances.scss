@@ -1,0 +1,8 @@
+%listStyles {
+    list-style: none;
+    @include textStyles(100, 1rem, $color-gray, 19px);
+    margin-right: 36px;
+    &:last-child {
+        margin-right: 0;
+    }
+}

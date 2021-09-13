@@ -1,0 +1,336 @@
+.footer {
+    @include responsiveDesign(1600px) {
+        padding: 300px 100px 103px 100px; 
+    }
+    @include responsiveDesign(1400px) {
+        padding: 300px 50px 103px 50px; 
+    }@include responsiveDesign(1200px) {
+        padding-top: 200px;
+    }
+    @include responsiveDesign(800px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    background-image: url('~./../../assets/images/background-bottom.svg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    padding: 300px 210px 103px 210px;
+    &__about-plan {
+        margin: 0 auto;
+        text-align: center;
+        h1 {
+            @include textStyles(700, 2.5rem, white, 47px);
+                padding-bottom: 30px;
+            @include responsiveDesign(992px) {
+                font-size: 1.5rem;
+                padding-bottom: 0;
+            }
+            @include responsiveDesign(800px) {
+                color: $color-black;
+            }
+        }
+        p {
+            @include responsiveDesign(510px) {
+                display: none;
+            }
+        }
+    }
+    &__pricing-box {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 80px 0 100px 0;
+        @include responsiveDesign(992px) {
+            flex-direction: column;
+            padding: 30px 0 30px 0;
+        }
+        &__order-box {
+            transform-style: preserve-3d;
+            transition: transform 0.7s linear;
+            &:hover {
+                transform: rotateY(180deg);
+            }
+            @include responsiveDesign(992px) {
+                width: 80%;
+                margin: 0 auto;
+                height: 25vh;
+                &:hover {
+                    transform: rotateX(180deg);
+                }
+            }
+            @include responsiveDesign(780px) {
+                width: 100%; 
+            }
+            @include responsiveDesign(510px) {
+                flex-wrap: wrap;
+            }
+            position: relative;
+            width: 340px;
+            height: 40vh;
+            &__front {
+                border-radius: 30px;
+                width: 100%;
+                padding: 50px 60px 70px 60px;
+                background-color: #0F1F4B;
+                position: absolute;
+                backface-visibility: hidden;
+                @include responsiveDesign(1200px) {
+                    width: 80%;
+                }
+                @include responsiveDesign(1100px) {
+                    padding: 48px 30px 68px 30px;
+                }
+                @include responsiveDesign(992px) {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                @include responsiveDesign(510px) {
+                    padding: 40px 10px;
+                }
+                &__user {
+                    @include responsiveDesign(510px) {
+                        width: 50%;
+                    }
+                    h1 {
+                        @include textStyles(700, 1.9rem, white, 36px);
+                        margin-bottom: 10px;
+                        @include responsiveDesign(992px) {
+                            font-size: 1.5rem;
+                            margin-bottom: 0;
+                        }
+                    }
+                    span {
+                        @include textStyles(100, 1.2rem, $color-gray, 27px);
+                    }
+                }
+                &__amount {
+                    @include responsiveDesign(510px) {
+                        width: 50%;
+                    }
+                    .dollar {
+                        @include textStyles(700, 1.9rem, white, 0);
+                        @include responsiveDesign(510px) {
+                            font-size: 1.5rem;
+                        }
+                    }
+                    .sum {
+                        @include textStyles(700, 3.8rem, white, 70px);
+                        @include responsiveDesign(992px) {
+                            font-size: 3rem;
+                            line-height: 42px;
+                        }
+                        @include responsiveDesign(510px) {
+                            font-size: 2rem;
+                            line-height: 42px;
+                        }
+                    }
+                    p {
+                        margin-bottom: 40px;
+                        @include responsiveDesign(992px) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                hr {
+                    margin: 37px 0 28px 0;
+                    @include responsiveDesign(992px) {
+                        display: none;
+                    }
+                }
+                button {
+                    @include buttonProperties(7% 40%, transparent, 68px, 1px solid #2A407C);
+                    @include textStyles(100, 1rem, white, 19px);
+                    @include responsiveDesign(1100px) {
+                        padding: 7% 30%;
+                    }
+                    @include responsiveDesign(992px) {
+                        padding: 3% 10%;
+                    }
+                    @include responsiveDesign(510px) {
+                        padding: 3% 5%;
+                    }
+                    cursor: pointer;
+                }
+            }
+            &__front-box {
+                background-color: white;
+                h1 {
+                    color: $color-black;
+                }
+                .dollar, .sum {
+                    color: $color-black;
+                }
+                button {
+                    background-color: $color-btn;
+                    border: none;
+                }
+                hr{
+                    border: 1px solid #D3D9E9;
+                }
+            }
+            &__back {
+                @include responsiveDesign(1200px) {
+                    padding: 40px 50px 55px 50px;
+                }
+                @include responsiveDesign(1100px) {
+                    padding: 40px 20px 55px 20px;
+                }
+                @include responsiveDesign(992px) {
+                    width: 100%;
+                    transform: rotateX(180deg);
+                    padding: 20px 40px;
+                }
+                position: absolute;
+                padding: 45px 66px 60px 66px;
+                background-color: white;
+                border-radius: 30px;
+                z-index: -1;
+                transform: rotateY(180deg);
+                backface-visibility: hidden;
+                h1 {
+                    @include textStyles(700, 1.3rem, $color-black, 20px);
+                    width: 101%;
+                }
+                &__user-info {
+                    padding: 0 5px;
+                    &__user-name {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        @include responsiveDesign(992px) {
+                            display: flow-root;
+                        }
+                        div {
+                            width: 100%;
+                            @include responsiveDesign(992px) {
+                                width: 30%;
+                                float: left;
+                                margin-right: 5%;
+                            }
+                        }
+                        div:last-child {
+                            margin-right: 0;
+                        }
+                        .person {
+                            font-size: 1rem;
+                            color: gray;
+                            margin-top: 5px;
+                            display: flex;
+                            align-items: flex-start;
+                        }
+                        span {
+                            width: 100%;
+                            height: 25px;
+                            border: 1px solid $color-gray;
+                            display: block;
+                        }
+                    }
+                    &__user-card {
+                        @include responsiveDesign(992px) {
+                            display: flow-root;
+                        }
+                        div {
+                            width: 100%;
+                            @include responsiveDesign(992px) {
+                                width: 40%;
+                                float: left;
+                            }
+                            @include responsiveDesign(670px) {
+                                width: 49%;
+                            }
+                        }
+                        div:first-child {
+                            margin-right: 20%;
+                            @include responsiveDesign(670px) {
+                                margin-right: 2%;
+                            }
+                        }
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .payment {
+                            font-size: 1rem;
+                            color: gray;
+                            margin-top: 5px;
+                            display: flex;
+                            align-items: flex-start;
+                        }
+                        span {
+                            width: 100%;
+                            height: 25px;
+                            border: 1px solid $color-gray;
+                            display: block;
+                        }
+                    }
+                }
+                &__pass {
+                    padding: 0 5px;
+                    margin-top: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    .cross {
+                        color: black;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        &__child-box {
+            margin-bottom: 0;
+        }
+    }
+    hr {
+        border: 1px solid #2A407C;
+    }
+    &__nav-box {
+        @include responsiveDesign(800px) {
+            margin-top: 30px;
+        }
+        @include responsiveDesign(450px) {
+            flex-direction: column;
+        }
+        margin-top: 63px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__item-logo {
+            @include responsiveDesign(450px) {
+                margin-bottom: 20px;
+                padding-left: 30px;
+            }
+            display: flex;
+            align-items: center;
+            margin-right: 32px;
+            img {
+                margin-right: 10px;
+            }
+            span {
+                @include textStyles(100, 1rem, $color-gray, 0);
+            }
+        }
+        ul {
+            @include responsiveDesign(768px) {
+                display: none;
+            }
+            display: flex;
+            align-items: center;
+            li {
+                @extend %listStyles;
+                font-size: 0.9rem;
+                line-height: 16px;
+            }
+        }
+        &__item-icons {
+            img {
+                margin-right: 40px;
+            }
+            img:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

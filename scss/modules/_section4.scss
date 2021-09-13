@@ -1,0 +1,55 @@
+.adress {
+    @include responsiveDesign(1700px) {
+        padding: 0 130px 120px 100px;
+    }
+    @include responsiveDesign(1200px) {
+        padding: 0 50px 40px 20px;
+    }
+    @include responsiveDesign(992px) {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    display: flex;
+    align-items: center;
+    padding: 0 210px 120px 180px;
+    &__content-box {
+        @include responsiveDesign(1550px) {
+            margin-left: 100px;
+        }
+        @include responsiveDesign(1400px) {
+            margin-left: 30px;
+        }
+        @include responsiveDesign(992px) {
+            margin-left: 0;
+        }
+        margin-left: 200px;
+        h1 {
+            @include textStyles(700, 2.5rem, $color-black, 46px);
+            padding-right: 30px;
+            @include responsiveDesign(1550px) {
+                padding-right: 0;
+            }
+            @include responsiveDesign(992px) {
+                margin: 0 auto;
+                font-size: 1.5rem;
+            }
+        }
+        p {
+            padding: 30px 70px 0 0;
+            @include responsiveDesign(1550px) {
+                padding-right: 0;
+            }
+        }
+    }
+    :first-child {
+        @include responsiveDesign(992px) {
+            width: 80%;
+            margin-top: 20px;
+        }
+        img {
+            @include responsiveDesign(992px) {
+                width: 100%;
+            }
+        }
+    }
+}

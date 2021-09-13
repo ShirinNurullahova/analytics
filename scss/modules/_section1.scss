@@ -1,0 +1,213 @@
+.heading {
+    width: 100%;
+    height: 100vh;
+    background-image: url('~./../../assets/images/background-top.svg');
+    background-size: cover;
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 210px 0 210px;
+        @include responsiveDesign(1544px) {
+            padding: 50px 100px 0 100px;
+        }
+        @include responsiveDesign(768px) {
+            padding: 30px 20px 0 20px;  
+        }
+        
+        @include responsiveDesign(800px) {
+            display: flex;
+            flex-direction: column;
+        }
+        &__left {
+            @include responsiveDesign(560px) {
+                padding-left: 70px;
+                margin-bottom: 10px;  
+            }
+            display: flex;
+            align-items: center;
+            &__logo {
+                display: flex;
+                align-items: center;
+                margin-right: 96px;
+                img {
+                    margin-right: 13px;
+                }
+                span {
+                    @include textStyles(700, 1.3rem, white, 0);
+                }
+            }
+            &__navbar {
+                @include responsiveDesign(1100px) {
+                    position: fixed;
+                    width: 100%;
+                }
+                ul {
+                    display: flex;
+                    @include responsiveDesign(1100px) {
+                        position: absolute;
+                        margin-top: 45px;
+                        margin-left: 0;
+                        width: 30%;
+                        display: block;
+                        right: -100%;
+                        transition: 0.4s ease-out;
+                    }
+                    @include responsiveDesign(950px) {
+                        width: 35%;
+                    }
+                    @include responsiveDesign(800px) {
+                        width: 60%;
+                    }
+                    @include responsiveDesign(560px) {
+                        width: 70%;
+                    }
+                    li {
+                        @extend %listStyles;
+                        @include responsiveDesign(1100px) {
+                            @include textStyles(100, 1.5rem, white, 70px);
+                            background-color: #EF2A82;
+                            border-bottom: 1px solid black;
+                            display: block;
+                            width: 100%;
+                            padding-left: 20px;
+                        }
+                        &:hover {
+                            color: #e9e3e5;
+                        }
+                        cursor: pointer;
+                    }
+                }
+                #control {
+                    display: none;
+                    @include responsiveDesign(1100px) {
+                        &:checked~ul {
+                            right: 0;
+                        }
+                    }
+                }
+                .control {
+                    position: relative;
+                    float: right;
+                    display: none;
+                    font-size: 30px;
+                    color: #EF2A82;
+                    cursor: pointer;
+                    margin-right: 180px;
+                    @include responsiveDesign(1100px) {
+                        display: block;
+                    }
+                    @include responsiveDesign(800px) {
+                        margin-right: 40%;
+                    }
+                    @include responsiveDesign(600px) {
+                        margin-right: 35%
+                    }
+                    @include responsiveDesign(400px) {
+                        margin-right: 30%;
+                    }
+                }
+            }
+        }
+        &__right {
+            @include responsiveDesign(1100px) {
+                margin-right: 20px;
+            }
+            
+            span, button {
+                @include textStyles(100, 1rem, $color-gray, 19px);
+                cursor: pointer;
+            }
+            button {
+                @include buttonProperties(10px 53px, transparent, 68px, 1px solid #465B95);
+                margin-left: 40px;
+                @include responsiveDesign(560px) {
+                    padding: 10px 30px;  
+                }
+            }
+        }
+    }
+    &__dashboard {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 74px;
+        @include responsiveDesign(1100px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 50px 0 50px;
+        }
+        @include responsiveDesign(768px) {
+            padding: 0 20px;
+        }
+        &__content {
+            width: 29%;
+            margin-left: 210px;
+            padding-top: 100px;
+            h1 {
+                @include textStyles(700, 3.2rem, white, 60px);
+                @include responsiveDesign(1100px) {
+                    font-size: 2rem;
+                }
+                @include responsiveDesign(768px) {
+                    font-size: 1.5rem;
+                }
+            }
+            p {
+                margin: 15px 0 50px 0;
+                @include responsiveDesign(1100px) {
+                    margin: 15px 0 25px 0;
+                }
+            }
+            button {
+                @include buttonProperties(16px 80px, $color-btn, 68px, none);
+                @include textStyles(100, 1rem, white, 19px);
+                @include responsiveDesign(768px) {
+                    padding: 10px 30px;
+                }
+            }
+            @include responsiveDesign(1870px) {
+                width: 32%;
+            }
+            @include responsiveDesign(1680px) {
+                width: 35%;
+            }
+            @include responsiveDesign(1544px) {
+                width: 39%;
+                margin-left: 100px;
+            }
+            @include responsiveDesign(1435px) {
+                width: 40%;
+                margin-left: 50px;
+            }
+            @include responsiveDesign(1200px) {
+                padding-top: 0;
+                width: 46%;
+                text-align: center;
+            }
+            @include responsiveDesign(1100px) {
+                width: 80%;
+                padding: 20px 0;
+                margin-left: 0;
+            }
+            @include responsiveDesign(768px) {
+                width: 90%;
+            }
+        }
+        &__image {
+            @include responsiveDesign(1100px) {
+                width: 65%;
+                padding-right: 50px;
+            }
+            @include responsiveDesign(768px) {
+                width: 85%;
+                padding-right: 50px;
+            }
+            img {
+                @include responsiveDesign(1100px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

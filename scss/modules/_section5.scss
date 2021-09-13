@@ -1,0 +1,48 @@
+.templates {
+    @include responsiveDesign(1700px) {
+        padding: 0 100px 120px 130px;
+    }
+    @include responsiveDesign(1200px) {
+        padding: 0 50px 40px 50px;
+    }
+    @include responsiveDesign(992px) {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 0;
+    }
+    display: flex;
+    align-items: center;
+    padding: 0 180px 115px 210px;
+    &__text-box {
+        h1 {
+            @include textStyles(700, 2.5rem, $color-black, 46px);
+            padding-right: 230px;
+            @include responsiveDesign(1600px) {
+                padding-right: 0;
+            }
+            @include responsiveDesign(992px) {
+                font-size: 1.5rem;
+            }
+        }
+        p {
+            padding: 30px 260px 0 0;
+            @include responsiveDesign(1600px) {
+                padding-right: 30px;
+            }
+            @include responsiveDesign(992px) {
+                margin: 0 auto;
+            }
+        }
+    }
+    :last-child {
+        @include responsiveDesign(992px) {
+            width: 80%;
+            margin-top: 20px;
+        }
+        img {
+            @include responsiveDesign(992px) {
+                width: 100%;
+            }
+        }
+    }
+}

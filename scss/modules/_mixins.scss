@@ -1,0 +1,20 @@
+@mixin textStyles($font-weight, $text-size, $text-color, $line-height) {
+    font-weight: $font-weight;
+    font-size: $text-size;
+    color: $text-color;
+    line-height: $line-height;
+}
+
+@mixin buttonProperties($padding, $background-color, $border-radius, $border) {
+    padding: $padding;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    border: $border;
+    outline: none;
+}
+
+@mixin responsiveDesign($screen-resolution) {
+    @media only screen and (max-width: $screen-resolution) {
+        @content
+    }
+}
